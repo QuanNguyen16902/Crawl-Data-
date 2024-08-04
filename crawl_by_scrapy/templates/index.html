@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VnExpress Articles</title>
+   <style>
+    .container
+    {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #FFFACD;
+    }
+    .article {
+     margin-bottom: 20px;
+     border-bottom: 1px solid #ddd; padding: 10px 0;
+       overflow: hidden;
+   }
+    .article img { max-width: 100px; margin-right: 10px; }
+    .title { font-size: 20px; margin: 10; font-weight: bold;}
+    .description { color: #555; }
+    h1 { color : red; text-align: center}
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VnExpress Articles</h1>
+        {% for article in articles %}
+        <div class="article">
+            <img src="{{ article[3] }}" alt="Image">
+            <span class="title">{{ article[1] }}</span>
+
+            <div>
+                <p class="description">{{ article[2] }}</p>
+                <a class="link" href="{{ article[4] }}">{{ article[4] }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
